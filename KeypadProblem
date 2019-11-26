@@ -1,0 +1,78 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static String [] helper(int n){
+        if(n==1){
+            String [] outputSoFar={""};
+            return outputSoFar;
+        }
+        
+        if(n==2){
+            String [] outputSoFar={"a","b","c"};
+            return outputSoFar;
+        }
+        if(n==3){
+            String [] outputSoFar={"d","e","f"};
+            return outputSoFar;
+        }
+        
+        if(n==4){
+            String [] outputSoFar={"g","h","i"};
+            return outputSoFar;
+        }
+        if(n==5){
+            String [] outputSoFar={"j","k","l"};
+            return outputSoFar;
+        }
+        if(n==6){
+            String [] outputSoFar={"m","n","o"};
+            return outputSoFar;
+        }
+        if(n==7){
+            String [] outputSoFar={"p","q","r","s"};
+            return outputSoFar;
+        }
+        if(n==8){
+            String [] outputSoFar={"t","u","v"};
+            return outputSoFar;
+        }
+        if(n==9){
+            String [] outputSoFar={"w","x","y","z"};
+            return outputSoFar;
+        }
+        return null;
+    }
+    public static void printKeypad(int input,String outputSoFar){
+        
+        if(input==0){
+            System.out.println(outputSoFar);
+            return;
+        }
+        
+        int rem=input%10;
+        String []outcome=helper(rem);
+        for(int i=0;i<outcome.length;i++){
+            printKeypad(input/10,outcome[i]+outputSoFar);
+        }
+        
+    }
+    public static void printKeypad(int input)
+    {
+       printKeypad(input,"");    
+    }
+    
+	public static void main (String[] args)
+	{
+	    
+	    Scanner Sc=new Scanner(System.in);
+	    int input=Sc.nextInt();
+	    printKeypad(input);
+		// your code goes here
+	}
+}
